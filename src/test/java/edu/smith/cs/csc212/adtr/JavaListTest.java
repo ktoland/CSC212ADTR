@@ -178,4 +178,25 @@ public class JavaListTest {
 	public void testToJava() {
 		assertEquals(makeFullList().toJava(), Arrays.asList("a", "b", "d", "d"));
 	}
+	
+	@Test 
+	public void testRemoveFront() {
+		ListADT<String> data = makeFullList();
+		data.removeFront();
+		Assert.assertEquals(data.getFront(), "b");
+	}
+	
+	@Test
+	public void testRemoveBack() {
+		ListADT<String> data = makeFullList();
+		data.removeBack();
+		Assert.assertEquals(data.getBack(), "c");
+	}
+	
+	@Test
+	public void testRemoveIndex() {
+		ListADT<String> data = makeFullList();
+		data.removeIndex(2);
+		Assert.assertEquals(data.size(), 3);
+	}
 }
